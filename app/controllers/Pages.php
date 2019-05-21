@@ -1,14 +1,25 @@
 <?php
 
-    class Pages
+    class Pages extends Controller
     {
-        public function index() {
-            
+        public function __construct(Type $var = null) {
+            $this->var = $var;
         }
 
-        public function about($id)
+        public function index() {
+            $data = [
+                'title' => 'Welcome'
+            ];
+
+            $this->view('pages/index', $data);
+        }
+
+        public function about()
         {
-            echo $id;
+            $data = [
+                'title' => 'About US'
+            ];
+            $this->view('pages/about', $data);
         }
     }
     

@@ -3,6 +3,7 @@
     class Pages extends Controller
     {
         public function __construct(Type $var = null) {
+            $this->postModel = $this->model('Post');
             $this->var = $var;
         }
 
